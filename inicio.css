@@ -15,6 +15,7 @@ b {
 }
 
 nav {
+    position: sticky;   
     background: #363C3F;
     padding: 10px 0;
     justify-content: center;
@@ -28,8 +29,9 @@ nav {
 }
 
 .pict{
-    width: 75%;
-    height: 75%;
+    width: 85%;
+    height: 85%;
+    margin-top: 10px;
 }
 
 .div1{
@@ -94,6 +96,25 @@ nav {
 .menu li:hover > .submenu {
     opacity: 1;
     visibility: visible;
+}
+
+.col-md-3 {
+    position: sticky;
+    right: 20px;  /* La mantiene en el lado derecho con espacio del borde */
+    top: 70px;  /* Evita que se superponga con el menú */
+    width: 250px;  /* Define el ancho */
+    height: calc(100vh - 60px); /* Altura ajustada sin interferir con el menú */
+    overflow-y: auto; /* Scroll si el contenido es largo */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.footer {
+    background-color: #363C3F;
+}
+
+.lista {
+    width: 75%;
+    text-align: center;
 }
 
 /* Responsive */
