@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
     <title>Listas Doblemente Enlazadas en Java</title>
+    <link rel="stylesheet" href="../inicio.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -18,7 +20,7 @@
                     <ul class="submenu">
                         <li><a href="poo.html">Principios de la POO</a></li>
                         <li><a href="l_e_simples.html">Listas Enlazadas Simples</a></li>
-                        <li><a href="l_doblemente_e.html">Listas Doblemente Enlazadas</a></li>
+                        <li><a href="l_doblemente_e.html" class="a">Listas Doblemente Enlazadas</a></li>
                         <li><a href="pilas.html">Pilas</a></li>
                         <li><a href="colas.html">Colas</a></li>
                     </ul>
@@ -33,6 +35,7 @@
             <div class="col-md-10">
                 <div class="row">
                     <div class="col-md-9">
+                        <br>
                         <b>Listas Doblemente Enlazadas</b>
                         <p>En el ámbito de las ciencias de la computación, una lista enlazada es una estructura de datos clave que se puede utilizar para crear otras estructuras. Está compuesta por una serie de nodos que almacenan datos y uno o dos enlaces, referencias o punteros al nodo anterior o siguiente. La principal ventaja de las listas enlazadas en comparación con los vectores tradicionales es que el orden de los elementos enlazados puede diferir del orden en que se almacenan en la memoria o en el disco, lo que permite que el recorrido de la lista sea distinto al orden de almacenamiento. (Delta PC, s.f.)</p>
                         <p>Las listas doblemente enlazadas son estructuras de datos similares a las listas enlazadas simples, y la memoria se asigna durante la ejecución. A diferencia de las listas enlazadas simples, en las listas doblemente enlazadas la conexión entre los elementos se realiza mediante dos punteros: uno que apunta al elemento anterior y otro que indica el siguiente. El puntero que apunta al elemento anterior del primer nodo debe señalar a NULL, marcando así el inicio de la lista, mientras que el puntero siguiente del último nodo también debe apuntar a NULL para indicar el final de la lista. (Biblia del Programador, 2014)</p>
@@ -42,53 +45,57 @@
                             <li><b>Desde el final</b>, el puntero anterior permite regresar al elemento previo</li>
                         </ul>
                         <pre><code class="language-java">
-                            class NodoDoble {
-                                int dato;
-                                NodoDoble anterior, siguiente;
-                            
-                                public NodoDoble(int dato) {
-                                    this.dato = dato;
-                                    this.anterior = this.siguiente = null;
-                                }
+                class NodoDoble {
+                    int dato;
+                    NodoDoble anterior, siguiente;
+                
+                    public NodoDoble(int dato) {
+                        this.dato = dato;
+                        this.anterior = this.siguiente = null;
+                    }
+                }
+                
+                class ListaDobleEnlazada {
+                    NodoDoble cabeza;
+                
+                    public void agregar(int dato) {
+                        NodoDoble nuevo = new NodoDoble(dato);
+                        if (cabeza == null) {
+                            cabeza = nuevo;
+                        } else {
+                            NodoDoble actual = cabeza;
+                            while (actual.siguiente != null) {
+                                actual = actual.siguiente;
                             }
-                            
-                            class ListaDobleEnlazada {
-                                NodoDoble cabeza;
-                            
-                                public void agregar(int dato) {
-                                    NodoDoble nuevo = new NodoDoble(dato);
-                                    if (cabeza == null) {
-                                        cabeza = nuevo;
-                                    } else {
-                                        NodoDoble actual = cabeza;
-                                        while (actual.siguiente != null) {
-                                            actual = actual.siguiente;
-                                        }
-                                        actual.siguiente = nuevo;
-                                        nuevo.anterior = actual;
-                                    }
-                                }
-                            
-                                public void mostrar() {
-                                    NodoDoble actual = cabeza;
-                                    while (actual != null) {
-                                        System.out.print(actual.dato + " <-> ");
-                                        actual = actual.siguiente;
-                                    }
-                                    System.out.println("null");
-                                }
-                            }
-                            
-                            public class ListaDobleEjemplo {
-                                public static void main(String[] args) {
-                                    ListaDobleEnlazada lista = new ListaDobleEnlazada();
-                                    lista.agregar(1);
-                                    lista.agregar(2);
-                                    lista.agregar(3);
-                                    lista.mostrar();
-                                }
-                            }                          
+                            actual.siguiente = nuevo;
+                            nuevo.anterior = actual;
+                        }
+                    }
+                
+                    public void mostrar() {
+                        NodoDoble actual = cabeza;
+                        while (actual != null) {
+                            System.out.print(actual.dato + " <-> ");
+                            actual = actual.siguiente;
+                        }
+                        System.out.println("null");
+                    }
+                }
+                
+                public class ListaDobleEjemplo {
+                    public static void main(String[] args) {
+                        ListaDobleEnlazada lista = new ListaDobleEnlazada();
+                        lista.agregar(1);
+                        lista.agregar(2);
+                        lista.agregar(3);
+                        lista.mostrar();
+                    }
+                }                          
                         </code></pre>
+                    
+                        <br><br>
+                        <p>Delta PC. (s.f.). <i>Java: Listas enlazadas simples.</i> Delta PC. Recuperado de <a href="https://www.deltapci.com/java-listas-enlazadas-simples/" target="_blank">https://www.deltapci.com/java-listas-enlazadas-simples/</a></p>
+                        <p>Biblia del Programador. (2014). <i>Listas simplemente y doblemente enlazadas.</i> Biblia del Programador. Recuperado de <a href="https://www.bibliadelprogramador.com/2014/04/listas-simplemente-y-doblemente.html?m=0" target="_blank">https://www.bibliadelprogramador.com/2014/04/listas-simplemente-y-doblemente.html?m=0</a></p>
                     </div>
                     <div class="col-md-3"></div>
                 </div>

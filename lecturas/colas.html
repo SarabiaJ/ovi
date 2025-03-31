@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
     <title>Colas en Java</title>
+    <link rel="stylesheet" href="../inicio.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -20,7 +22,7 @@
                         <li><a href="l_e_simples.html">Listas Enlazadas Simples</a></li>
                         <li><a href="l_doblemente_e.html">Listas Doblemente Enlazadas</a></li>
                         <li><a href="pilas.html">Pilas</a></li>
-                        <li><a href="colas.html">Colas</a></li>
+                        <li><a href="colas.html" class="a">Colas</a></li>
                     </ul>
                 </li>
                 <li><a href="multimedia.html">Multimedia</a></li>
@@ -33,9 +35,10 @@
             <div class="col-md-10">
                 <div class="row">
                     <div class="col-md-9">
+                        <br>
                         <b>Colas</b>
                         <p>Una cola es una estructura de datos donde los elementos se añaden al final y se retiran desde el principio, siguiendo el principio de “primero en entrar, primero en salir” (FIFO). Por ejemplo, en una cola de banco, el primer cliente que llega es el primero en ser atendido, o en un laboratorio, el primero en llegar es el primero que se hace exámenes. En Java, podemos implementar colas utilizando la interfaz Queue. (Quispe, 2024)</p>
-                        <p>Métodos más usados.</p>
+                        <p><b>Métodos más usados.</b></p>
                         <ul>
                             <li>`add`: inserta un elemento en la cola.</li>
                             <li>`poll`: elimina y devuelve el primer elemento de la cola.</li>
@@ -43,30 +46,33 @@
                             <li>`isEmpty`: verifica si la cola está vacía. </li>
                         </ul>
                         <pre><code class="language-java">
-                            import java.util.LinkedList;
-                            import java.util.Queue;
-                                public class ColaBanco {
-                                    public static void main(String[] args) {
-                                        Queue<String> colaClientes = new LinkedList<>();
-                                        
-                                        // Agregando clientes a la cola
-                                        colaClientes.add("Cliente 1");
-                                        colaClientes.add("Cliente 2");
-                                        colaClientes.add("Cliente 3");
-                                        
-                                        // Mostrando el primer cliente sin eliminarlo
-                                        System.out.println("Primer cliente en la cola: " + colaClientes.peek());
-                                        
-                                        // Atendiendo clientes (eliminándolos de la cola)
-                                        System.out.println("Atendiendo a: " + colaClientes.poll());
-                                        System.out.println("Atendiendo a: " + colaClientes.poll());
-                                        
-                                        // Verificando si la cola está vacía
-                                        System.out.println("¿La cola está vacía? " + colaClientes.isEmpty());
-                                    }
-                                }
+    import java.util.LinkedList;
+    import java.util.Queue;
+
+    public class ColaBanco {
+        public static void main(String[] args) {
+            Queue<String> colaClientes = new LinkedList<>();
+            
+            // Agregando clientes a la cola
+            colaClientes.add("Cliente 1");
+            colaClientes.add("Cliente 2");
+            colaClientes.add("Cliente 3");
+            
+            // Mostrando el primer cliente sin eliminarlo
+            System.out.println("Primer cliente en la cola: " + colaClientes.peek());
+            
+            // Atendiendo clientes (eliminándolos de la cola)
+            System.out.println("Atendiendo a: " + colaClientes.poll());
+            System.out.println("Atendiendo a: " + colaClientes.poll());
+            
+            // Verificando si la cola está vacía
+            System.out.println("¿La cola está vacía? " + colaClientes.isEmpty());
+        }
+    }
                             </code></pre>                            
-                    </div>
+                        <br><br>
+                        <p>Quispe, A. (2024). <i>Dominando las Estructuras de Datos en Java: Pilas y Colas.</i> Medium. Recuperado de <a href="https://amsoft.medium.com/dominando-las-estructuras-de-datos-en-java-pilas-y-colas-09a4279264b1" target="_blank">https://amsoft.medium.com/dominando-las-estructuras-de-datos-en-java-pilas-y-colas-09a4279264b1</a></p>
+                        </div>
                     <div class="col-md-3"></div>
                 </div>
             </div>

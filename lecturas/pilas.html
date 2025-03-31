@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
     <title>Pilas en Java</title>
+    <link rel="stylesheet" href="../inicio.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -19,7 +21,7 @@
                         <li><a href="poo.html">Principios de la POO</a></li>
                         <li><a href="l_e_simples.html">Listas Enlazadas Simples</a></li>
                         <li><a href="l_doblemente_e.html">Listas Doblemente Enlazadas</a></li>
-                        <li><a href="pilas.html">Pilas</a></li>
+                        <li><a href="pilas.html" class="a">Pilas</a></li>
                         <li><a href="colas.html">Colas</a></li>
                     </ul>
                 </li>
@@ -33,9 +35,10 @@
             <div class="col-md-10">
                 <div class="row">
                     <div class="col-md-9">
+                        <br>
                         <b>Pilas</b>
                         <p>Una pila es una estructura de datos donde los elementos se añaden y se quitan según el principio de “último en entrar, primero en salir” (LIFO). Por ejemplo, en una pila de libros, el último libro que se coloca es el primero que se retira. En Java, se puede implementar pilas mediante la clase genérica Stack. (Quispe, 2024)</p>
-                        <p>Métodos más usados.</p>
+                        <p><b>Métodos más usados.</b></p>
                         <ul>
                             <li>`push`: inserta un elemento en la pila.</li>
                             <li>`pop`: elimina el elemento superior de la pila.</li>
@@ -44,36 +47,39 @@
                             <li>`search`: busca un elemento en la pila y devuelve su distancia desde la parte superior.</li>
                         </ul>
                         <pre><code class="language-java">
-                            import java.util.Stack;
-                                public class PilaLibros {
-                                    public static void main(String[] args) {
-                                        Stack<String> pilaDeLibros = new Stack<>();
-                                        
-                                        // Agregando libros a la pila
-                                        pilaDeLibros.push("El principito");
-                                        pilaDeLibros.push("Cien años de soledad");
-                                        pilaDeLibros.push("Don Quijote de la Mancha");
-                                        
-                                        // Mostrando el libro en la cima sin eliminarlo
-                                        System.out.println("Libro en la cima: " + pilaDeLibros.peek());
-                                        
-                                        // Sacando libros de la pila
-                                        System.out.println("Sacando: " + pilaDeLibros.pop());
-                                        System.out.println("Sacando: " + pilaDeLibros.pop());
-                                        
-                                        // Verificando si la pila está vacía
-                                        System.out.println("¿La pila está vacía? " + pilaDeLibros.isEmpty());
-                                        
-                                        // Buscando un libro en la pila
-                                        int posicion = pilaDeLibros.search("El principito");
-                                        if (posicion != -1) {
-                                            System.out.println("El libro 'El principito' está en la posición: " + posicion);
-                                        } else {
-                                            System.out.println("El libro no se encuentra en la pila.");
-                                        }
-                                    }
-                                }
+    import java.util.Stack;
+
+    public class PilaLibros {
+        public static void main(String[] args) {
+            Stack<String> pilaDeLibros = new Stack<>();
+            
+            // Agregando libros a la pila
+            pilaDeLibros.push("El principito");
+            pilaDeLibros.push("Cien años de soledad");
+            pilaDeLibros.push("Don Quijote de la Mancha");
+            
+            // Mostrando el libro en la cima sin eliminarlo
+            System.out.println("Libro en la cima: " + pilaDeLibros.peek());
+            
+            // Sacando libros de la pila
+            System.out.println("Sacando: " + pilaDeLibros.pop());
+            System.out.println("Sacando: " + pilaDeLibros.pop());
+            
+            // Verificando si la pila está vacía
+            System.out.println("¿La pila está vacía? " + pilaDeLibros.isEmpty());
+            
+            // Buscando un libro en la pila
+            int posicion = pilaDeLibros.search("El principito");
+            if (posicion != -1) {
+                System.out.println("El libro 'El principito' está en la posición: " + posicion);
+            } else {
+                System.out.println("El libro no se encuentra en la pila.");
+            }
+        }
+    }
                         </code></pre>
+                    <br><br>
+                    <p>Quispe, A. (2024). <i>Dominando las Estructuras de Datos en Java: Pilas y Colas.</i> Medium. Recuperado de <a href="https://amsoft.medium.com/dominando-las-estructuras-de-datos-en-java-pilas-y-colas-09a4279264b1" target="_blank">https://amsoft.medium.com/dominando-las-estructuras-de-datos-en-java-pilas-y-colas-09a4279264b1</a></p>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
