@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
     <title>Listas Enlazadas Simples en Java</title>
 </head>
 <body>
@@ -38,6 +41,53 @@
                             <li><b>Enlace (puntero):</b> Una referencia al siguiente nodo en la secuencia.</li>
                         </ul>
                         <p>Las listas enlazadas simples típicamente tienen un único puntero por nodo que señala al siguiente nodo en la secuencia. Sin embargo, en algunas variaciones, un nodo en una lista enlazada simple puede contener múltiples punteros, aunque esto no sea común.</p>
+                        <pre><code class="language-java">
+                            class Nodo {
+                                int dato;
+                                Nodo siguiente;
+                            
+                                public Nodo(int dato) {
+                                    this.dato = dato;
+                                    this.siguiente = null;
+                                }
+                            }
+                            
+                            class ListaEnlazada {
+                                Nodo cabeza;
+                            
+                                public void agregar(int dato) {
+                                    Nodo nuevo = new Nodo(dato);
+                                    if (cabeza == null) {
+                                        cabeza = nuevo;
+                                    } else {
+                                        Nodo actual = cabeza;
+                                        while (actual.siguiente != null) {
+                                            actual = actual.siguiente;
+                                        }
+                                        actual.siguiente = nuevo;
+                                    }
+                                }
+                            
+                                public void mostrar() {
+                                    Nodo actual = cabeza;
+                                    while (actual != null) {
+                                        System.out.print(actual.dato + " -> ");
+                                        actual = actual.siguiente;
+                                    }
+                                    System.out.println("null");
+                                }
+                            }
+                            
+                            public class ListaSimpleEjemplo {
+                                public static void main(String[] args) {
+                                    ListaEnlazada lista = new ListaEnlazada();
+                                    lista.agregar(1);
+                                    lista.agregar(2);
+                                    lista.agregar(3);
+                                    lista.mostrar();
+                                }
+                            }                            
+                        </code></pre>                            
                     </div>
                     <div class="col-md-3"></div>
                 </div>

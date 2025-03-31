@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
     <title>Listas Doblemente Enlazadas en Java</title>
 </head>
 <body>
@@ -38,6 +41,54 @@
                             <li><b>Desde el inicio</b>, el puntero siguiente facilita el desplazamiento hacia el próximo elemento.</li>
                             <li><b>Desde el final</b>, el puntero anterior permite regresar al elemento previo</li>
                         </ul>
+                        <pre><code class="language-java">
+                            class NodoDoble {
+                                int dato;
+                                NodoDoble anterior, siguiente;
+                            
+                                public NodoDoble(int dato) {
+                                    this.dato = dato;
+                                    this.anterior = this.siguiente = null;
+                                }
+                            }
+                            
+                            class ListaDobleEnlazada {
+                                NodoDoble cabeza;
+                            
+                                public void agregar(int dato) {
+                                    NodoDoble nuevo = new NodoDoble(dato);
+                                    if (cabeza == null) {
+                                        cabeza = nuevo;
+                                    } else {
+                                        NodoDoble actual = cabeza;
+                                        while (actual.siguiente != null) {
+                                            actual = actual.siguiente;
+                                        }
+                                        actual.siguiente = nuevo;
+                                        nuevo.anterior = actual;
+                                    }
+                                }
+                            
+                                public void mostrar() {
+                                    NodoDoble actual = cabeza;
+                                    while (actual != null) {
+                                        System.out.print(actual.dato + " <-> ");
+                                        actual = actual.siguiente;
+                                    }
+                                    System.out.println("null");
+                                }
+                            }
+                            
+                            public class ListaDobleEjemplo {
+                                public static void main(String[] args) {
+                                    ListaDobleEnlazada lista = new ListaDobleEnlazada();
+                                    lista.agregar(1);
+                                    lista.agregar(2);
+                                    lista.agregar(3);
+                                    lista.mostrar();
+                                }
+                            }                          
+                        </code></pre>
                     </div>
                     <div class="col-md-3"></div>
                 </div>

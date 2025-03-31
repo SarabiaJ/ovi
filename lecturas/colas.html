@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
     <title>Colas en Java</title>
 </head>
 <body>
@@ -39,6 +42,30 @@
                             <li>`peek`: devuelve el primer elemento de la cola sin eliminarlo.</li>
                             <li>`isEmpty`: verifica si la cola está vacía. </li>
                         </ul>
+                        <pre><code class="language-java">
+                            import java.util.LinkedList;
+                            import java.util.Queue;
+                                public class ColaBanco {
+                                    public static void main(String[] args) {
+                                        Queue<String> colaClientes = new LinkedList<>();
+                                        
+                                        // Agregando clientes a la cola
+                                        colaClientes.add("Cliente 1");
+                                        colaClientes.add("Cliente 2");
+                                        colaClientes.add("Cliente 3");
+                                        
+                                        // Mostrando el primer cliente sin eliminarlo
+                                        System.out.println("Primer cliente en la cola: " + colaClientes.peek());
+                                        
+                                        // Atendiendo clientes (eliminándolos de la cola)
+                                        System.out.println("Atendiendo a: " + colaClientes.poll());
+                                        System.out.println("Atendiendo a: " + colaClientes.poll());
+                                        
+                                        // Verificando si la cola está vacía
+                                        System.out.println("¿La cola está vacía? " + colaClientes.isEmpty());
+                                    }
+                                }
+                            </code></pre>                            
                     </div>
                     <div class="col-md-3"></div>
                 </div>

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
     <title>Pilas en Java</title>
 </head>
 <body>
@@ -40,6 +43,37 @@
                             <li>`isEmpty`: verifica si la pila está vacía.</li>
                             <li>`search`: busca un elemento en la pila y devuelve su distancia desde la parte superior.</li>
                         </ul>
+                        <pre><code class="language-java">
+                            import java.util.Stack;
+                                public class PilaLibros {
+                                    public static void main(String[] args) {
+                                        Stack<String> pilaDeLibros = new Stack<>();
+                                        
+                                        // Agregando libros a la pila
+                                        pilaDeLibros.push("El principito");
+                                        pilaDeLibros.push("Cien años de soledad");
+                                        pilaDeLibros.push("Don Quijote de la Mancha");
+                                        
+                                        // Mostrando el libro en la cima sin eliminarlo
+                                        System.out.println("Libro en la cima: " + pilaDeLibros.peek());
+                                        
+                                        // Sacando libros de la pila
+                                        System.out.println("Sacando: " + pilaDeLibros.pop());
+                                        System.out.println("Sacando: " + pilaDeLibros.pop());
+                                        
+                                        // Verificando si la pila está vacía
+                                        System.out.println("¿La pila está vacía? " + pilaDeLibros.isEmpty());
+                                        
+                                        // Buscando un libro en la pila
+                                        int posicion = pilaDeLibros.search("El principito");
+                                        if (posicion != -1) {
+                                            System.out.println("El libro 'El principito' está en la posición: " + posicion);
+                                        } else {
+                                            System.out.println("El libro no se encuentra en la pila.");
+                                        }
+                                    }
+                                }
+                        </code></pre>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
